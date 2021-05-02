@@ -1,0 +1,28 @@
+.sale-flash__card {
+    text-align: center;
+    padding: 2em;
+    width: 30%;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        font-size: 48px;
+        font-weight: bold;
+        margin: 0;
+    }
+}
+
+.sale-flash__wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 720px) {
+    .sale-flash__wrapper {
+        flex-direction: column;
+    }
+    .sale-flash__card {
+        width: 100%;
+    }
+}

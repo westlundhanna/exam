@@ -1,0 +1,223 @@
+/*
+* Colors
+*/
+@font-face {
+  font-family: Montserrat;
+  src: url("/wp-content/themes/storefront-child/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Montserrat-bold;
+  src: url("/wp-content/themes/storefront-child/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: bold;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat-bold";
+}
+
+p,
+a {
+  font-family: "Montserrat";
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  border: solid 2px #6FA9B6;
+  background: none;
+}
+button a {
+  color: #fff;
+  font-weight: normal;
+  font-family: "Montserrat";
+}
+
+button:hover {
+  opacity: 0.8;
+  background: none;
+  border: solid 2px #6FA9B6;
+}
+
+/*
+* Colors
+*/
+@font-face {
+  font-family: Montserrat;
+  src: url("/wp-content/themes/storefront-child/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Montserrat-bold;
+  src: url("/wp-content/themes/storefront-child/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: bold;
+}
+.product-categories {
+  min-height: 400px;
+  display: flex;
+  column-gap: 2em;
+  justify-content: center;
+}
+
+.product-category {
+  width: 600px;
+  height: 500px;
+  background-position: center !important;
+  background-size: contain !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat !important;
+}
+
+.product-category p {
+  text-transform: uppercase;
+  background: black;
+  color: white;
+  padding: 10px;
+}
+
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+}
+
+#site-header-cart {
+  display: none;
+}
+
+.site-branding .site-title a {
+  font-size: 64px;
+  font-family: "Montserrat";
+  letter-spacing: unset;
+}
+
+.menu li.menu-item a:hover {
+  color: #6FA9B6;
+}
+
+.storefront-secondary-navigation.woocommerce-active .site-header .secondary-navigation {
+  float: right;
+  margin-right: 0;
+  margin-top: 2em;
+}
+
+.woocommerce-product-search {
+  display: none;
+}
+
+.primary-navigation {
+  display: none;
+}
+
+.site-header {
+  border-bottom: none;
+}
+
+section.hero__wrapper {
+  min-height: 700px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  height: 100%;
+  width: 1150px;
+  align-items: center;
+  display: flex;
+}
+
+.button__wrapper {
+  margin-left: 3em;
+}
+
+.hero-button {
+  min-width: 200px;
+  height: 65px;
+}
+.hero-button a {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .primary-navigation {
+    display: block;
+  }
+
+  button.menu-toggle {
+    border: none;
+    width: 50px;
+  }
+
+  section.hero__wrapper {
+    background-size: cover;
+    background-position: right;
+  }
+
+  .site-branding .site-title a {
+    font-size: 60px;
+  }
+
+  .handheld-navigation {
+    display: none;
+  }
+
+  .main-menu-2 {
+    display: none;
+  }
+}
+.sale-flash__card {
+  text-align: center;
+  padding: 2em;
+  width: 30%;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sale-flash__card p {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.sale-flash__wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 720px) {
+  .sale-flash__wrapper {
+    flex-direction: column;
+  }
+
+  .sale-flash__card {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=combined.css.map */

@@ -1,0 +1,37 @@
+@import 'typography';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat-bold';
+}
+
+p,
+a {
+    font-family: 'Montserrat';
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+}
+
+body,
+html {
+    scroll-behavior: smooth;
+}
+
+button {
+    border: solid 2px $color-main-teal;
+    background: none;
+    a {
+        color: #fff;
+        font-weight: normal;
+        font-family: 'Montserrat';
+    }
+}
+
+button:hover {
+    opacity: 0.8;
+    background: none;
+    border: solid 2px $color-main-teal;
+}

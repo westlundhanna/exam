@@ -1,0 +1,85 @@
+#site-header-cart {
+    display: none;
+}
+
+.site-branding .site-title a {
+    font-size: 64px;
+    font-family: 'Montserrat';
+    letter-spacing: unset;
+}
+
+.menu li.menu-item a:hover {
+    color: $color-main-teal;
+}
+
+.storefront-secondary-navigation.woocommerce-active .site-header .secondary-navigation {
+    float: right;
+    margin-right: 0;
+    margin-top: 2em;
+}
+
+.woocommerce-product-search {
+    display: none;
+}
+
+.primary-navigation {
+    display: none;
+}
+
+.site-header {
+    border-bottom: none;
+}
+
+section.hero__wrapper {
+    min-height: 700px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    height: 100%;
+    width: 1150px;
+    align-items: center;
+    display: flex;
+}
+
+.button__wrapper {
+    margin-left: 3em;
+}
+
+.hero-button {
+    min-width: 200px;
+    height: 65px;
+    a {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 720px) {
+    .primary-navigation {
+        display: block;
+    }
+    button.menu-toggle {
+        border: none;
+        width: 50px;
+    }
+    section.hero__wrapper {
+        background-size: cover;
+        background-position: right;
+    }
+    .site-branding .site-title a {
+        font-size: 60px;
+    }
+    .handheld-navigation {
+        display: none;
+    }
+    .main-menu-2 {
+        display: none;
+    }
+}
