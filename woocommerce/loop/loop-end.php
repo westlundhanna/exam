@@ -18,6 +18,18 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+$queried_object = get_queried_object(); 
+$taxonomy = $queried_object->taxonomy;
+$term_id = $queried_object->term_id;  
+
+$checked = get_field('sidmall', $taxonomy . '_' . $term_id);
+
+if(is_product_category() && $checked == true) { ?>
+    </div>
+<?php
+} else {
 
 ?>
     </ul>
+<?php
+}

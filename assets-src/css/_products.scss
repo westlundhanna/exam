@@ -54,3 +54,32 @@ button.menu-toggle:hover,
 .handheld-navigation .dropdown-toggle {
     color: unset;
 }
+
+.canvas-products {
+    display: flex;
+    flex-direction: column;
+}
+
+.canvas-product {
+    display: flex;
+    margin-bottom: 3em;
+    padding-bottom: 3em;
+    border-bottom: solid 1px $color-main-teal;
+}
+
+.canvas-product a {
+    width: 50%;
+}
+
+.product-canvas__description {
+    width: 50%;
+}
+
+.read-more__button {
+    background: $color-main-teal;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    letter-spacing: inherit;
+}

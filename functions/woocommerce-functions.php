@@ -18,11 +18,22 @@ function woo_add_short_description() {
 }
 
 /**
- * Adds acf value to products
+ * Adds acf value Konstnär to products
  */ 
 function woo_add_artist_acf_to_products() {
      if(get_field('konstnar')) { ?>
           <p class="artist-name"><?php the_field('konstnar'); ?></p>
+     <?php
+     }
+}
+
+/**
+ * Adds acf value Kampanj to products
+ */ 
+
+function woo_add_campaign_acf_to_products() {
+     if(get_field('kampanj')) { ?>
+          <p class="campaign-text"><?php the_field('kampanj'); ?></p>
      <?php
      }
 }
@@ -55,3 +66,11 @@ function woo_remove_product_tabs( $tabs ) {
     return $tabs;
 }
 
+function woo_add_read_more() {
+     global $product;
+     if ( $product ) {
+         $url = esc_url( $product->get_permalink() );
+         echo '<a rel="nofollow" href="' . $url . '" class="read-more"><button class="read-more__button">Läs mer</button></a>';
+     }
+ }
+ 

@@ -122,6 +122,35 @@ button.menu-toggle:hover,
   color: unset;
 }
 
+.canvas-products {
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas-product {
+  display: flex;
+  margin-bottom: 3em;
+  padding-bottom: 3em;
+  border-bottom: solid 1px #6FA9B6;
+}
+
+.canvas-product a {
+  width: 50%;
+}
+
+.product-canvas__description {
+  width: 50%;
+}
+
+.read-more__button {
+  background: #6FA9B6;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  letter-spacing: inherit;
+}
+
 #site-header-cart {
   display: none;
 }

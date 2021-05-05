@@ -18,7 +18,18 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+$queried_object = get_queried_object(); 
+$taxonomy = $queried_object->taxonomy;
+$term_id = $queried_object->term_id;  
+
+$checked = get_field('sidmall', $taxonomy . '_' . $term_id);
+
+if(is_product_category() && $checked == true) { ?>
+    <div class="canvas-products">
+<?php
+} else {
 
 ?>
     <ul class="products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
-
+<?php
+}
