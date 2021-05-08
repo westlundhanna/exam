@@ -35,19 +35,12 @@ html {
 }
 
 button {
-  border: solid 2px #6FA9B6;
-  background: none;
+  background: #6FA9B6;
 }
 button a {
   color: #fff;
   font-weight: normal;
   font-family: "Montserrat";
-}
-
-button:hover {
-  opacity: 0.8;
-  background: none;
-  border: solid 2px #6FA9B6;
 }
 
 /*
@@ -151,8 +144,35 @@ button.menu-toggle:hover,
   letter-spacing: inherit;
 }
 
+nav#product-cat-nav-menu {
+  height: 100px;
+  border-bottom: solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  margin-bottom: 8em;
+}
+
+.menu-product-categories-container {
+  width: 100%;
+}
+
+#menu-product-categories {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 100%;
+  margin: auto;
+}
+
 #site-header-cart {
   display: none;
+}
+
+.home.page:not(.page-template-template-homepage) .site-header {
+  margin-bottom: 0em;
 }
 
 .site-branding .site-title a {
@@ -186,12 +206,12 @@ button.menu-toggle:hover,
 section.hero__wrapper {
   min-height: 700px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   position: relative;
   background-position: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .hero-content {
@@ -203,6 +223,7 @@ section.hero__wrapper {
 
 .button__wrapper {
   margin-left: 3em;
+  margin-bottom: 10em;
 }
 
 .hero-button {
@@ -259,6 +280,19 @@ section.hero__wrapper {
 .sale-flash__wrapper {
   display: flex;
   justify-content: space-around;
+}
+
+.gallery-images {
+  display: flex;
+  margin-top: 1em;
+  column-gap: 1em;
+}
+
+.gallery-image {
+  object-fit: cover;
+  object-position: center;
+  height: 700px;
+  width: 100%;
 }
 
 @media (max-width: 720px) {

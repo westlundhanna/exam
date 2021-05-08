@@ -83,3 +83,26 @@ button.menu-toggle:hover,
     padding: 1rem 2rem;
     letter-spacing: inherit;
 }
+
+nav#product-cat-nav-menu {
+    height: 100px;
+    border-bottom: solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    margin-bottom: 8em;
+}
+
+.menu-product-categories-container {
+    width: 100%;
+}
+
+#menu-product-categories {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 100%;
+    margin: auto;
+}

@@ -11,6 +11,17 @@ function add_fullwidth_hero_under_header() {
 	endif;  
 }
 
+function add_gallery_images() {
+    if(have_rows('galleri')):
+		while(have_rows('galleri')): the_row();
+			get_template_part('./template-parts/gallery');
+		endwhile;
+	endif;
+}
+function add_product_categories() {
+	get_template_part('./template-parts/section-product-categories');
+}
+
 function storefront_remove_sidebar_shop_page() {
 
 	if ( is_shop() || is_tax( 'product_cat' ) || get_post_type() == 'product' ) {

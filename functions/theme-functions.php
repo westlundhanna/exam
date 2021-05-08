@@ -13,6 +13,7 @@ function wp_register_menus() {
     register_nav_menus(
       array(
         'single-product-form' => __( 'Single Product Form' ),
+        'product-categories' => __( 'Product Category Menu' ),
       )
     );
   }

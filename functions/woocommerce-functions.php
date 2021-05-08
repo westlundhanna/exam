@@ -52,6 +52,18 @@ function add_nav_to_single_product_form() {
      </nav>
 <?php
 }
+function add_product_categories_nav() {
+     ?>
+          <nav id="product-cat-nav-menu" role="navigation">
+              <?php
+                  wp_nav_menu( array( 
+                      'theme_location' => 'product-categories', 
+                      'container_class' => '' ) ); 
+                  ?>
+          </nav>
+     <?php
+     }
+
 
 /**
  * Remove product data tabs

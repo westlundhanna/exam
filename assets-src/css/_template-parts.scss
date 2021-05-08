@@ -18,6 +18,19 @@
     justify-content: space-around;
 }
 
+.gallery-images {
+    display: flex;
+    margin-top: 1em;
+    column-gap: 1em;
+}
+
+.gallery-image {
+    object-fit: cover;
+    object-position: center;
+    height: 700px;
+    width: 100%;
+}
+
 @media (max-width: 720px) {
     .sale-flash__wrapper {
         flex-direction: column;

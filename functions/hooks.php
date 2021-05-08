@@ -6,6 +6,9 @@ add_filter( 'storefront_menu_toggle_text', 'remove_default_text_toggle_menu' );
 
 // Adds hero before content
 add_action('storefront_before_content', 'add_fullwidth_hero_under_header', 1);
+add_action('storefront_before_content', 'add_gallery_images', 1);
+// add_action('storefront_before_content', 'add_product_categories', 2);
+add_action('storefront_before_content', 'add_product_categories_nav', 2);
 
 // Title before thumbnail
 // remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
@@ -28,8 +31,6 @@ add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 
 // Removes product meta from single product
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-
-
 
 
 // Function containing hooks that triggers for specific product category
