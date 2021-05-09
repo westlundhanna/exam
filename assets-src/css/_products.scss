@@ -106,3 +106,31 @@ nav#product-cat-nav-menu {
     width: 100%;
     margin: auto;
 }
+
+.woocommerce-info {
+    background-color: $color-main-teal;
+}
+
+form#filterproducts {
+    display: flex;
+    align-items: center;
+}
+
+p.woocommerce-result-count {
+    display: none;
+}
+
+.storefront-full-width-content .woocommerce-products-header {
+    text-align: initial;
+}
+
+.filter-select__container {
+    display: flex;
+    column-gap: 1em;
+}
+
+.filter-buttons__container {
+    display: flex;
+    margin-left: 2em;
+    column-gap: 1em;
+}

@@ -1,15 +1,6 @@
 <?php
 defined('ABSPATH') or die;
 
-// Changes default text to toggle menu
-add_filter( 'storefront_menu_toggle_text', 'remove_default_text_toggle_menu' );
-
-// Adds hero before content
-add_action('storefront_before_content', 'add_fullwidth_hero_under_header', 1);
-add_action('storefront_before_content', 'add_gallery_images', 1);
-// add_action('storefront_before_content', 'add_product_categories', 2);
-add_action('storefront_before_content', 'add_product_categories_nav', 2);
-
 // Title before thumbnail
 // remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 // add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
@@ -19,8 +10,6 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'woo_add_short_description
 
 // Adds acf value with artist name to products
 add_action('woocommerce_single_product_summary', 'woo_add_artist_acf_to_products', 1);
-
-add_action( 'wp', 'storefront_remove_sidebar_shop_page' );
 
 // Removes excerpt from single product and replaces with full description
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
@@ -32,6 +21,12 @@ add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 // Removes product meta from single product
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
+
+// Filter hooks
+add_filter( 'query_vars', 'product_filterby_query_var' );
+add_action( 'custom_wc_products_sort', 'product_wc_filterby' );
+add_action( 'pre_get_posts', 'product_wc_filterby', 11, 1 );
+add_action('woocommerce_before_shop_loop', 'add_filter_template_part');
 
 // Function containing hooks that triggers for specific product category
 add_action( 'wp', 'product_category_specific_hooks' );   
@@ -62,6 +57,7 @@ function product_category_specific_hooks(){
    endif;
 
 }
+
 
 
 

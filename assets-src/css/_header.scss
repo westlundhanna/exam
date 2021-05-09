@@ -1,5 +1,10 @@
 #site-header-cart {
-    display: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+span.count {
+    margin-right: 1em;
 }
 
 .home.page:not(.page-template-template-homepage) .site-header {

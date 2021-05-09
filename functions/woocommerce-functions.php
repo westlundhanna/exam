@@ -85,4 +85,11 @@ function woo_add_read_more() {
          echo '<a rel="nofollow" href="' . $url . '" class="read-more"><button class="read-more__button">Läs mer</button></a>';
      }
  }
+
+ /**
+  * Removes sorting div after shop loop
+  */
+ function remove_default_sorting_storefront() {
+     remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
+   }
  
