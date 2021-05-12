@@ -73,9 +73,23 @@ function woo_remove_product_tabs( $tabs ) {
 
     unset( $tabs['description'] );
     unset( $tabs['reviews'] );
-    unset( $tabs['additional_information'] );
 
     return $tabs;
+}
+
+/**
+ * Rename tab
+ */
+
+function woo_rename_tabs( $tabs ) {
+    $tabs['additional_information']['title'] = __( 'Egenskaper' );     // Rename the additional information tab
+
+    return $tabs;
+}
+
+function woo_change_additional_information_header() {
+	return __( 'Egenskaper', 'Egenskaper' );
+
 }
 
 function woo_add_read_more() {
@@ -89,7 +103,7 @@ function woo_add_read_more() {
  /**
   * Removes sorting div after shop loop
   */
- function remove_default_sorting_storefront() {
+function remove_default_sorting_storefront() {
      remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
-   }
+}
  

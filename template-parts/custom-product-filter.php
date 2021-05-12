@@ -64,9 +64,6 @@
             <div class="filter-submit">
                 <input class="filter" name="visa" value="Välj filter" type="submit"></input>
             </div>
-            <div class="filter-clear">
-                <input class="filter-clear" name="rensa" value="Rensa filter" type="submit"></input>
-            </div>
         </div>
     </form>
 </div>

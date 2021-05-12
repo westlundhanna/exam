@@ -92,7 +92,6 @@ nav#product-cat-nav-menu {
     align-items: center;
     background: #000;
     color: #fff;
-    margin-bottom: 8em;
 }
 
 .menu-product-categories-container {
@@ -133,4 +132,38 @@ p.woocommerce-result-count {
     display: flex;
     margin-left: 2em;
     column-gap: 1em;
+}
+
+#menu-product-order-button {
+    margin: 0;
+}
+
+@media (max-width: 720px) {
+    .canvas-product {
+        flex-direction: column;
+    }
+    .product-canvas__description {
+        width: 100%;
+    }
+    .canvas-product a {
+        width: 100%;
+    }
+    select#stil,
+    select#color,
+    select#size {
+        width: 33%;
+        display: flex;
+    }
+    form#filterproducts {
+        flex-direction: column;
+        align-items: unset;
+    }
+    .filter-buttons__container {
+        flex-direction: column;
+        margin-left: unset;
+    }
+    input.filter {
+        width: 100%;
+        margin-top: 2em;
+    }
 }

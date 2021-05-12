@@ -15,7 +15,7 @@ $featured_image = get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' );
 	<div class="col-full">
 		<?php
 		
-		
+		do_action( 'storefront_homepage' );
 		?>
 	</div>
 </div><!-- #post-## -->

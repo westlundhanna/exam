@@ -20,8 +20,11 @@ html {
     scroll-behavior: smooth;
 }
 
-button {
+button,
+.button,
+.single-product__order-button {
     background: $color-main-teal;
+    color: #fff;
     a {
         color: #fff;
         font-weight: normal;
