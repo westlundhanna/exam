@@ -17,15 +17,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
         <?php
-			if(get_field('sale_flash')):
-				get_template_part('./template-parts/section-sale-flashes'); 
-			endif;
-			// if(get_field('kategorier')):
-			// 	get_template_part('./template-parts/section-product-categories');
-			// endif;
-
+			
+			
 			do_action( 'homepage' );
-			// get_template_part('./template-parts/gallery');
+
 					
 		?>
 		
