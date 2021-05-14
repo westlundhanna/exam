@@ -22,6 +22,7 @@ html {
 
 button,
 .button,
+.button.alt,
 .single-product__order-button {
     background: $color-main-teal;
     color: #fff;
@@ -32,6 +33,16 @@ button,
     }
 }
 
-// button:hover {
-//     background: none;
-// }
+button:hover {
+    opacity: 0.9;
+}
+
+.wp-block-column h2::before,
+.wp-block-column h2::after {
+    display: inline-block;
+    content: "";
+    border-top: 1px solid black;
+    width: 9rem;
+    margin: 0 2rem;
+    transform: translateY(-10px);
+}

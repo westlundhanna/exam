@@ -138,6 +138,19 @@ p.woocommerce-result-count {
     margin: 0;
 }
 
+.order-details__wrapper {
+    label {
+        display: flex;
+        flex-direction: column;
+    }
+    input.wpcf7-form-control.wpcf7-submit {
+        margin-top: 2em;
+    }
+    input.wpcf7-form-control.wpcf7-text {
+        width: 100%;
+    }
+}
+
 @media (max-width: 720px) {
     .canvas-product {
         flex-direction: column;

@@ -36,16 +36,32 @@ html {
 
 button,
 .button,
+.button.alt,
 .single-product__order-button {
   background: #6FA9B6;
   color: #fff;
 }
 button a,
 .button a,
+.button.alt a,
 .single-product__order-button a {
   color: #fff;
   font-weight: normal;
   font-family: "Montserrat";
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.wp-block-column h2::before,
+.wp-block-column h2::after {
+  display: inline-block;
+  content: "";
+  border-top: 1px solid black;
+  width: 9rem;
+  margin: 0 2rem;
+  transform: translateY(-10px);
 }
 
 /*
@@ -203,6 +219,17 @@ p.woocommerce-result-count {
   margin: 0;
 }
 
+.order-details__wrapper label {
+  display: flex;
+  flex-direction: column;
+}
+.order-details__wrapper input.wpcf7-form-control.wpcf7-submit {
+  margin-top: 2em;
+}
+.order-details__wrapper input.wpcf7-form-control.wpcf7-text {
+  width: 100%;
+}
+
 @media (max-width: 720px) {
   .canvas-product {
     flex-direction: column;
@@ -238,11 +265,6 @@ select#size {
     margin-top: 2em;
   }
 }
-#site-header-cart {
-  display: flex;
-  justify-content: flex-end;
-}
-
 span.count {
   margin-right: 1em;
 }
@@ -252,7 +274,7 @@ span.count {
 }
 
 .site-branding .site-title a {
-  font-size: 64px;
+  font-size: 48px;
   font-family: "Montserrat";
   letter-spacing: unset;
 }
@@ -264,7 +286,7 @@ span.count {
 .storefront-secondary-navigation.woocommerce-active .site-header .secondary-navigation {
   float: right;
   margin-right: 0;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .woocommerce-product-search {
@@ -277,6 +299,7 @@ span.count {
 
 .site-header {
   border-bottom: none;
+  padding-top: 1em;
 }
 
 section.hero__wrapper {
@@ -359,28 +382,55 @@ section.hero__wrapper {
 }
 
 .gallery-images {
-  display: flex;
   margin-top: 1em;
+  display: flex;
   column-gap: 1em;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .gallery-image {
-  object-fit: cover;
-  object-position: center;
-  height: 430px;
-  width: 50%;
+  min-height: 600px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 49%;
+}
+
+.gallery-image:nth-child(3n+3) {
+  width: 100%;
+  margin-top: 1em;
+}
+
+.gallery-title {
+  text-transform: uppercase;
+  font-family: Montserrat;
+  color: white;
+}
+
+.gallery-content {
+  text-align: center;
+}
+.gallery-content button {
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-weight: normal;
 }
 
 .banner {
   display: flex;
   justify-content: center;
-  background: #6FA9B6;
+  background: #e8e0d7;
   padding: 20px;
   color: #fff;
   margin-top: -2px;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 5px;
+  width: 100%;
 }
 
 @media (max-width: 720px) {

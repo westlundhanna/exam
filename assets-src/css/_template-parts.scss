@@ -19,28 +19,55 @@
 }
 
 .gallery-images {
-    display: flex;
     margin-top: 1em;
+    display: flex;
     column-gap: 1em;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .gallery-image {
-    object-fit: cover;
-    object-position: center;
-    height: 430px;
-    width: 50%;
+    min-height: 600px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 49%;
+}
+
+.gallery-image:nth-child(3n+3) {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.gallery-title {
+    text-transform: uppercase;
+    font-family: Montserrat;
+    color: white;
+}
+
+.gallery-content {
+    text-align: center;
+    button {
+        text-transform: uppercase;
+        font-family: 'Montserrat';
+        font-weight: normal;
+    }
 }
 
 .banner {
     display: flex;
     justify-content: center;
-    background: $color-main-teal;
+    background: $color-main-beige;
     padding: 20px;
     color: #fff;
     margin-top: -2px;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 5px;
+    width: 100%;
 }
 
 @media (max-width: 720px) {
