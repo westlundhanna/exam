@@ -12,8 +12,11 @@ function add_fullwidth_hero_under_header() {
 }
 
 function add_gallery_images() {
+
 	get_template_part('./template-parts/gallery');
+
 }
+
 function add_product_categories() {
 	get_template_part('./template-parts/section-product-categories');
 }
@@ -40,11 +43,14 @@ function remove_actions_parent_theme() {
 	remove_action('homepage', 'storefront_popular_products', 50 );
 	remove_action('homepage', 'storefront_on_sale_products', 60 );
 	remove_action('homepage', 'storefront_best_selling_products', 70 );
+	
 };
 
-function storefront_remove_title_from_home_homepage_template() {
+function storefront_actions() {
 	remove_action( 'storefront_homepage', 'storefront_homepage_header', 10 );
+	remove_action( 'storefront_header', 'storefront_header_cart', 60 );
 }
+
 
 function add_banner() {
 	$term_id = get_queried_object()->term_id;
@@ -63,4 +69,19 @@ function add_banner() {
 	<?php
 	}
 	
+}
+
+// Append cart item (and cart count) to end of main menu.
+
+function am_append_cart_icon( $items, $args ) {
+	$cart_item_count = WC()->cart->get_cart_contents_count();
+	$cart_count_span = '';
+	if ( $cart_item_count ) {
+		$cart_count_span = '<span class="count">'.$cart_item_count.'</span>';
+	}
+	$cart_link = '<li class="cart menu-item menu-item-type-post_type menu-item-object-page"><a href="' . get_permalink( wc_get_page_id( 'cart' ) ) . '"><span class="dashicons dashicons-cart"></span>'.$cart_count_span.'</a></li>';
+
+	$items = $items . $cart_link;
+
+	return $items;
 }

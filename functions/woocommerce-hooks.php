@@ -5,6 +5,8 @@ defined('ABSPATH') or die;
 // remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 // add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
 
+add_filter( 'wp_nav_menu_main-menu_items', 'am_append_cart_icon', 5, 2 );
+
 // Adds short description to product archive
 add_action( 'woocommerce_after_shop_loop_item_title', 'woo_add_short_description' );
 
@@ -35,7 +37,6 @@ add_action( 'custom_wc_products_sort', 'product_wc_filterby' );
 add_action( 'pre_get_posts', 'product_wc_filterby', 11, 1 );
 add_action('woocommerce_before_shop_loop', 'add_filter_template_part', 50);
 
-
 // Function containing hooks that triggers for specific product category
 add_action( 'wp', 'product_category_specific_hooks' );   
 function product_category_specific_hooks(){
@@ -63,7 +64,6 @@ function product_category_specific_hooks(){
    endif;
 
 }
-
 
 
 
