@@ -28,17 +28,6 @@ function woo_add_artist_acf_to_products() {
 }
 
 /**
- * Adds acf value Kampanj to products
- */ 
-
-function woo_add_campaign_acf_to_products() {
-     if(get_field('kampanj')) { ?>
-          <p class="campaign-text"><?php the_field('kampanj'); ?></p>
-     <?php
-     }
-}
-
-/**
  * Adds menu to single product
  */ 
 function add_nav_to_single_product_form() {
@@ -92,6 +81,34 @@ function woo_change_additional_information_header() {
 
 }
 
+/**
+* Add a custom product data tab
+*/
+
+function woo_new_product_tab( $tabs ) {
+	
+	// Adds the new tab
+	
+	$tabs['technical_tab'] = array(
+		'title' 	=> __( 'Teknik', 'woocommerce' ),
+		'priority' 	=> 50,
+		'callback' 	=> 'woo_tech_tab_content'
+    );
+
+	return $tabs;
+
+}
+function woo_tech_tab_content() {
+	echo '<h2>Teknik</h2>';	
+     if(have_rows('produkttabbar')): 
+          while(have_rows('produkttabbar')): the_row();
+               if(get_row_layout() == 'tekniktabb'): 
+                    the_sub_field('teknik');
+               endif;
+          endwhile;
+     endif;
+}
+
 function woo_add_read_more() {
      global $product;
      if ( $product ) {
@@ -106,4 +123,16 @@ function woo_add_read_more() {
 function remove_default_sorting_storefront() {
      remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
 }
- 
+
+function woo_short_description_filter( $post_post_excerpt ) { 
+     $queried_object = get_queried_object(); 
+     $taxonomy = $queried_object->taxonomy;
+     $term_id = $queried_object->term_id;  
+
+     $checked = get_field('sidmall', $taxonomy . '_' . $term_id);
+     if( !$checked  ) {
+          return false;
+     } else {
+          return $post_post_excerpt; 
+     }    
+}
