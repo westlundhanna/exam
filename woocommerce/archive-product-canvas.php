@@ -24,7 +24,13 @@ do_action( 'woocommerce_before_main_content' );
 <header class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-	<?php endif; ?>
+	<?php endif;
+	
+	$term_object = get_queried_object();
+	?>
+	<div class="woocommerce-category-description">
+		<div class="description"><?php echo $term_object->description; ?></div>
+	</div>
 </header>
 <?php
 if ( woocommerce_product_loop() ) {
