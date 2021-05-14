@@ -43,7 +43,7 @@ function product_category_specific_hooks(){
    // Adds form on single product page
    add_action('woocommerce_single_product_summary', 'add_form_to_single_product', 10);
    // Filter hook for cf7 form on single product page for canvas
-   add_filter( 'wpcf7_form_tag', 'add_select_size_to_order_form', 10, 2);
+   add_filter('wpcf7_form_tag', 'add_variations_to_order_form', 10, 2);
    // Removes add to cart button
    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
    // Adds read more button to product loop
