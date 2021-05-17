@@ -14,12 +14,17 @@
   font-style: bold;
 }
 h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: "Montserrat-bold";
+}
+
+h2,
+input,
+select {
+  font-family: "Montserrat";
 }
 
 p,
@@ -213,6 +218,20 @@ p.woocommerce-result-count {
   display: flex;
   margin-left: 2em;
   column-gap: 1em;
+  width: 100%;
+  justify-content: space-between;
+}
+
+input.clear {
+  background-color: unset;
+  border: none;
+  color: unset;
+}
+
+input.clear:hover {
+  background-color: unset;
+  border: none;
+  color: unset;
 }
 
 #menu-product-order-button {
@@ -228,6 +247,10 @@ p.woocommerce-result-count {
 }
 .order-details__wrapper input.wpcf7-form-control.wpcf7-text {
   width: 100%;
+}
+
+.woocommerce-message {
+  background-color: #6FA9B6;
 }
 
 @media (max-width: 720px) {
