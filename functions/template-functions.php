@@ -53,22 +53,7 @@ function storefront_actions() {
 
 
 function add_banner() {
-	$term_id = get_queried_object()->term_id;
-    $post_id = 'product_cat_'.$term_id;
-	if(get_field('banner', $post_id) || get_field('banner')) {
-	?>
-	<div class="banner">
-		<?php 
-		if(is_product_category()) {
-			the_field('banner', $post_id);
-		} else {
-			the_field('banner'); 
-		}
-		?>
-	</div>
-	<?php
-	}
-	
+	get_template_part('./template-parts/banner');
 }
 
 // Append cart item (and cart count) to end of main menu.
