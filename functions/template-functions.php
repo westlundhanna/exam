@@ -12,9 +12,17 @@ function add_fullwidth_hero_under_header() {
 }
 
 function add_gallery_images() {
-
 	get_template_part('./template-parts/gallery');
+}
 
+function add_fullwidth_section() {
+	if( have_rows('fullwidth') ):
+		while ( have_rows('fullwidth') ) : the_row();
+			if( get_row_layout() == 'fullwidth-section' ): 
+				get_template_part('./template-parts/fullwidth-section');
+			endif;
+		endwhile;
+	endif;  
 }
 
 function add_product_categories() {
