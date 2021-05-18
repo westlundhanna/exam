@@ -1,0 +1,31 @@
+@mixin title-transform {
+    display: inline-block;
+    content: "";
+    border-top: 1px solid black;
+    width: 9rem;
+    margin: 0 2rem;
+    transform: translateY(-10px);
+}
+
+@mixin title-above-images {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 36px;
+}
+
+@mixin primary-font {
+    font-family: 'Montserrat';
+}
+
+@mixin button {
+    background: $color-main-teal;
+    color: #fff;
+}
+
+@mixin paragraph {
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    @include primary-font;
+}

@@ -84,13 +84,21 @@ button.menu-toggle:hover,
     letter-spacing: inherit;
 }
 
+.description {
+    text-align: center;
+    @include paragraph;
+    font-size: 1.1em;
+    max-width: 723px;
+    margin: auto;
+}
+
 nav#product-cat-nav-menu {
     height: 100px;
     border-bottom: solid 1px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000;
+    background: rgb(24, 24, 24);
     color: #fff;
 }
 

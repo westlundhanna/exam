@@ -1,5 +1,5 @@
 @import 'typography';
-h1,
+@import 'mixins';
 h3,
 h4,
 h5,
@@ -7,17 +7,22 @@ h6 {
     font-family: 'Montserrat-bold';
 }
 
+h1,
 h2,
 input,
 select {
-    font-family: 'Montserrat';
+    @include primary-font;
 }
 
 p,
 a {
-    font-family: 'Montserrat';
-    line-height: 1.5;
-    letter-spacing: 0.1em;
+    @include primary-font;
+    @include paragraph;
+}
+
+.page-title,
+.entry-title {
+    text-align: center;
 }
 
 body,
@@ -29,12 +34,10 @@ button,
 .button,
 .button.alt,
 .single-product__order-button {
-    background: $color-main-teal;
-    color: #fff;
+    @include button;
     a {
         color: #fff;
         font-weight: normal;
-        font-family: 'Montserrat';
     }
 }
 
@@ -42,12 +45,36 @@ button:hover {
     opacity: 0.9;
 }
 
-.wp-block-column h2::before,
-.wp-block-column h2::after {
-    display: inline-block;
-    content: "";
-    border-top: 1px solid black;
-    width: 9rem;
-    margin: 0 2rem;
-    transform: translateY(-10px);
+.white {
+    @include title-above-images;
+}
+
+h2.has-text-align-center::before,
+h2.has-text-align-center::after,
+.page-title::before,
+.page-title::after,
+.entry-title::before,
+.entry-title::after {
+    @include title-transform;
+}
+
+.product_title::before,
+.product_title::after {
+    display: unset;
+    border-top: none;
+    width: unset;
+    margin: unset;
+    content: unset;
+    transform: unset;
+}
+
+.product_title {
+    text-align: unset;
+}
+
+@media (max-width: 1024px) {
+    .wp-block-column h2::before,
+    .wp-block-column h2::after {
+        width: 4rem;
+    }
 }

@@ -7,9 +7,13 @@ span.count {
 }
 
 .site-branding .site-title a {
-    font-size: 48px;
+    font-size: 40px;
     font-family: 'Montserrat';
     letter-spacing: unset;
+}
+
+.site-search form {
+    margin-top: 10px;
 }
 
 .menu li.menu-item a:hover {
@@ -20,16 +24,15 @@ span.count {
     float: right;
     margin-right: 0;
     margin-top: 1em;
-}
-
-.woocommerce-product-search {
     display: none;
 }
 
-.primary-navigation {
-    display: none;
-}
-
+// .woocommerce-product-search {
+//     display: none;
+// }
+// .primary-navigation {
+//     display: none;
+// }
 .site-header {
     border-bottom: none;
     padding-top: 1em;
