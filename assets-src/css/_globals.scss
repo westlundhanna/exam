@@ -11,6 +11,7 @@ h1,
 h2,
 input,
 select,
+label,
 .woocommerce-breadcrumb {
     @include primary-font;
 }
@@ -52,6 +53,7 @@ button:hover {
 
 .white {
     @include title-above-images;
+    background-color: #6fa9b666;
 }
 
 h2.has-text-align-center::before,
@@ -77,9 +79,39 @@ h2.has-text-align-center::after,
     text-align: unset;
 }
 
+.entry-content .has-text-align-center {
+    text-align: center;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+    font-family: "Montserrat";
+    max-width: 723px;
+    margin: auto;
+}
+
 @media (max-width: 1024px) {
     .wp-block-column h2::before,
-    .wp-block-column h2::after {
+    .wp-block-column h2::after,
+    .page-title::before,
+    .page-title::after,
+    .entry-title::before,
+    .entry-title::after {
         width: 4rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .wp-block-column h2::before,
+    .wp-block-column h2::after,
+    .page-title::before,
+    .page-title::after,
+    .entry-title::before,
+    .entry-title::after {
+        content: "\A";
+        width: 6px;
+        height: 5px;
+        border-radius: 50%;
+        background: #000;
+        display: inline-block;
+        margin: 0 15px;
     }
 }

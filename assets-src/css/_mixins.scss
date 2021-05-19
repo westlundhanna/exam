@@ -25,7 +25,7 @@
 }
 
 @mixin paragraph {
-    line-height: 1.5;
+    line-height: 1.8;
     letter-spacing: 0.1em;
     @include primary-font;
 }

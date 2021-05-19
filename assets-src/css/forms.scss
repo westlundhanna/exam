@@ -1,3 +1,49 @@
+.filter-select__container {
+    display: flex;
+    column-gap: 1em;
+}
+
+.filter-buttons__container {
+    display: flex;
+    margin-left: 2em;
+    column-gap: 1em;
+    width: 100%;
+}
+
+form#filterproducts {
+    display: flex;
+    align-items: center;
+}
+
+input.clear {
+    background-color: unset;
+    border: none;
+    color: unset;
+}
+
+input.clear:hover {
+    background-color: unset;
+    border: none;
+    color: unset;
+}
+
+#menu-product-order-button {
+    margin: 0;
+}
+
+.order-details__wrapper {
+    label {
+        display: flex;
+        flex-direction: column;
+    }
+    input.wpcf7-form-control.wpcf7-submit {
+        margin-top: 2em;
+    }
+    input.wpcf7-form-control.wpcf7-text {
+        width: 100%;
+    }
+}
+
 .hide {
     display: none;
 }
@@ -26,4 +72,61 @@ span.close-form {
     top: 0;
     left: 0;
     z-index: 100;
+}
+
+.wp-block-contact-form-7-contact-form-selector .wpcf7-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    margin-top: 6em;
+    label {
+        display: flex;
+        flex-direction: column;
+        input {
+            width: 100%;
+        }
+    }
+    .wpcf7-submit {
+        width: 25%;
+        margin-top: 2em;
+        @include button;
+    }
+    .input-wrapper {
+        display: flex;
+        column-gap: 1em;
+        label {
+            width: 50%;
+            input {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.storefront-sorting {
+    margin-bottom: 8em;
+}
+
+@media (max-width: 720px) {
+    form#filterproducts {
+        flex-direction: column;
+        align-items: unset;
+    }
+    .filter-buttons__container {
+        flex-direction: column;
+        margin-left: unset;
+    }
+    input.filter {
+        width: 100%;
+        margin-top: 2em;
+    }
+    .filter-select__container {
+        flex-direction: column;
+        row-gap: 1em;
+        select#stil,
+        select#color,
+        select#size {
+            width: 100%;
+        }
+    }
 }

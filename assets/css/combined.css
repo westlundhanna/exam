@@ -24,6 +24,7 @@ h1,
 h2,
 input,
 select,
+label,
 .woocommerce-breadcrumb {
   font-family: "Montserrat";
 }
@@ -35,7 +36,7 @@ select,
 p,
 a {
   font-family: "Montserrat";
-  line-height: 1.5;
+  line-height: 1.8;
   letter-spacing: 0.1em;
   font-family: "Montserrat";
 }
@@ -75,6 +76,7 @@ button:hover {
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 36px;
+  background-color: #6fa9b666;
 }
 
 h2.has-text-align-center::before,
@@ -105,10 +107,39 @@ h2.has-text-align-center::after,
   text-align: unset;
 }
 
+.entry-content .has-text-align-center {
+  text-align: center;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+  font-family: "Montserrat";
+  max-width: 723px;
+  margin: auto;
+}
+
 @media (max-width: 1024px) {
   .wp-block-column h2::before,
-.wp-block-column h2::after {
+.wp-block-column h2::after,
+.page-title::before,
+.page-title::after,
+.entry-title::before,
+.entry-title::after {
     width: 4rem;
+  }
+}
+@media (max-width: 720px) {
+  .wp-block-column h2::before,
+.wp-block-column h2::after,
+.page-title::before,
+.page-title::after,
+.entry-title::before,
+.entry-title::after {
+    content: "\a";
+    width: 6px;
+    height: 5px;
+    border-radius: 50%;
+    background: #000;
+    display: inline-block;
+    margin: 0 15px;
   }
 }
 /*
@@ -194,6 +225,13 @@ button.menu-toggle:hover,
   padding-bottom: 3em;
   border-bottom: solid 1px #6FA9B6;
 }
+.one-column-product img {
+  /* height: auto; */
+  max-width: 100%;
+  width: 85%;
+  object-fit: cover;
+  object-position: top;
+}
 
 .one-column-product a {
   width: 50%;
@@ -201,6 +239,9 @@ button.menu-toggle:hover,
 
 .one-column-product__description {
   width: 50%;
+}
+.one-column-product__description h2 {
+  margin-top: 1em;
 }
 
 .read-more__button {
@@ -210,11 +251,12 @@ button.menu-toggle:hover,
   text-transform: uppercase;
   padding: 1rem 2rem;
   letter-spacing: inherit;
+  margin-top: 2em;
 }
 
 .description {
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.8;
   letter-spacing: 0.1em;
   font-family: "Montserrat";
   font-size: 1.1em;
@@ -248,57 +290,12 @@ nav#product-cat-nav-menu {
   background-color: #6FA9B6;
 }
 
-form#filterproducts {
-  display: flex;
-  align-items: center;
-}
-
 p.woocommerce-result-count {
   display: none;
 }
 
 .storefront-full-width-content .woocommerce-products-header {
   text-align: initial;
-}
-
-.filter-select__container {
-  display: flex;
-  column-gap: 1em;
-}
-
-.filter-buttons__container {
-  display: flex;
-  margin-left: 2em;
-  column-gap: 1em;
-  width: 100%;
-  justify-content: space-between;
-}
-
-input.clear {
-  background-color: unset;
-  border: none;
-  color: unset;
-}
-
-input.clear:hover {
-  background-color: unset;
-  border: none;
-  color: unset;
-}
-
-#menu-product-order-button {
-  margin: 0;
-}
-
-.order-details__wrapper label {
-  display: flex;
-  flex-direction: column;
-}
-.order-details__wrapper input.wpcf7-form-control.wpcf7-submit {
-  margin-top: 2em;
-}
-.order-details__wrapper input.wpcf7-form-control.wpcf7-text {
-  width: 100%;
 }
 
 .woocommerce-message {
@@ -316,28 +313,6 @@ input.clear:hover {
 
   .one-column-product a {
     width: 100%;
-  }
-
-  select#stil,
-select#color,
-select#size {
-    width: 33%;
-    display: flex;
-  }
-
-  form#filterproducts {
-    flex-direction: column;
-    align-items: unset;
-  }
-
-  .filter-buttons__container {
-    flex-direction: column;
-    margin-left: unset;
-  }
-
-  input.filter {
-    width: 100%;
-    margin-top: 2em;
   }
 }
 span.count {
@@ -366,7 +341,10 @@ span.count {
   float: right;
   margin-right: 0;
   margin-top: 1em;
-  display: none;
+}
+
+.woocommerce-active .site-header .main-navigation {
+  width: unset;
 }
 
 .site-header {
@@ -422,7 +400,7 @@ section.hero__wrapper {
   }
 
   .site-branding .site-title a {
-    font-size: 60px;
+    font-size: 38px;
   }
 
   .handheld-navigation {
@@ -432,27 +410,11 @@ section.hero__wrapper {
   .main-menu-2 {
     display: none;
   }
-}
-.sale-flash__card {
-  text-align: center;
-  padding: 2em;
-  width: 30%;
-  height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.sale-flash__card p {
-  font-size: 48px;
-  font-weight: bold;
-  margin: 0;
-}
 
-.sale-flash__wrapper {
-  display: flex;
-  justify-content: space-around;
+  button.menu-toggle {
+    margin-top: 20px;
+  }
 }
-
 .gallery-images {
   margin-top: 1em;
   display: flex;
@@ -517,14 +479,54 @@ section.hero__wrapper {
   }
 }
 @media (max-width: 720px) {
-  .sale-flash__wrapper {
-    flex-direction: column;
-  }
-
-  .sale-flash__card {
-    width: 100%;
+  .banner {
+    text-align: center;
   }
 }
+.filter-select__container {
+  display: flex;
+  column-gap: 1em;
+}
+
+.filter-buttons__container {
+  display: flex;
+  margin-left: 2em;
+  column-gap: 1em;
+  width: 100%;
+}
+
+form#filterproducts {
+  display: flex;
+  align-items: center;
+}
+
+input.clear {
+  background-color: unset;
+  border: none;
+  color: unset;
+}
+
+input.clear:hover {
+  background-color: unset;
+  border: none;
+  color: unset;
+}
+
+#menu-product-order-button {
+  margin: 0;
+}
+
+.order-details__wrapper label {
+  display: flex;
+  flex-direction: column;
+}
+.order-details__wrapper input.wpcf7-form-control.wpcf7-submit {
+  margin-top: 2em;
+}
+.order-details__wrapper input.wpcf7-form-control.wpcf7-text {
+  width: 100%;
+}
+
 .hide {
   display: none;
 }
@@ -553,6 +555,67 @@ span.close-form {
   top: 0;
   left: 0;
   z-index: 100;
+}
+
+.wp-block-contact-form-7-contact-form-selector .wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  margin-top: 6em;
+}
+.wp-block-contact-form-7-contact-form-selector .wpcf7-form label {
+  display: flex;
+  flex-direction: column;
+}
+.wp-block-contact-form-7-contact-form-selector .wpcf7-form label input {
+  width: 100%;
+}
+.wp-block-contact-form-7-contact-form-selector .wpcf7-form .wpcf7-submit {
+  width: 25%;
+  margin-top: 2em;
+  background: #6FA9B6;
+  color: #fff;
+}
+.wp-block-contact-form-7-contact-form-selector .wpcf7-form .input-wrapper {
+  display: flex;
+  column-gap: 1em;
+}
+.wp-block-contact-form-7-contact-form-selector .wpcf7-form .input-wrapper label {
+  width: 50%;
+}
+.wp-block-contact-form-7-contact-form-selector .wpcf7-form .input-wrapper label input {
+  width: 100%;
+}
+
+.storefront-sorting {
+  margin-bottom: 8em;
+}
+
+@media (max-width: 720px) {
+  form#filterproducts {
+    flex-direction: column;
+    align-items: unset;
+  }
+
+  .filter-buttons__container {
+    flex-direction: column;
+    margin-left: unset;
+  }
+
+  input.filter {
+    width: 100%;
+    margin-top: 2em;
+  }
+
+  .filter-select__container {
+    flex-direction: column;
+    row-gap: 1em;
+  }
+  .filter-select__container select#stil,
+.filter-select__container select#color,
+.filter-select__container select#size {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=combined.css.map */

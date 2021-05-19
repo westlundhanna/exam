@@ -24,15 +24,13 @@ span.count {
     float: right;
     margin-right: 0;
     margin-top: 1em;
-    display: none;
+    // display: none;
 }
 
-// .woocommerce-product-search {
-//     display: none;
-// }
-// .primary-navigation {
-//     display: none;
-// }
+.woocommerce-active .site-header .main-navigation {
+    width: unset;
+}
+
 .site-header {
     border-bottom: none;
     padding-top: 1em;
@@ -83,12 +81,15 @@ section.hero__wrapper {
         background-position: right;
     }
     .site-branding .site-title a {
-        font-size: 60px;
+        font-size: 38px;
     }
     .handheld-navigation {
         display: none;
     }
     .main-menu-2 {
         display: none;
+    }
+    button.menu-toggle {
+        margin-top: 20px;
     }
 }

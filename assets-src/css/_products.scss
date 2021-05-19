@@ -65,6 +65,13 @@ button.menu-toggle:hover,
     margin-bottom: 3em;
     padding-bottom: 3em;
     border-bottom: solid 1px $color-main-teal;
+    img {
+        /* height: auto; */
+        max-width: 100%;
+        width: 85%;
+        object-fit: cover;
+        object-position: top;
+    }
 }
 
 .one-column-product a {
@@ -73,6 +80,9 @@ button.menu-toggle:hover,
 
 .one-column-product__description {
     width: 50%;
+    h2 {
+        margin-top: 1em;
+    }
 }
 
 .read-more__button {
@@ -82,6 +92,7 @@ button.menu-toggle:hover,
     text-transform: uppercase;
     padding: 1rem 2rem;
     letter-spacing: inherit;
+    margin-top: 2em;
 }
 
 .description {
@@ -118,59 +129,12 @@ nav#product-cat-nav-menu {
     background-color: $color-main-teal;
 }
 
-form#filterproducts {
-    display: flex;
-    align-items: center;
-}
-
 p.woocommerce-result-count {
     display: none;
 }
 
 .storefront-full-width-content .woocommerce-products-header {
     text-align: initial;
-}
-
-.filter-select__container {
-    display: flex;
-    column-gap: 1em;
-}
-
-.filter-buttons__container {
-    display: flex;
-    margin-left: 2em;
-    column-gap: 1em;
-    width: 100%;
-    justify-content: space-between;
-}
-
-input.clear {
-    background-color: unset;
-    border: none;
-    color: unset;
-}
-
-input.clear:hover {
-    background-color: unset;
-    border: none;
-    color: unset;
-}
-
-#menu-product-order-button {
-    margin: 0;
-}
-
-.order-details__wrapper {
-    label {
-        display: flex;
-        flex-direction: column;
-    }
-    input.wpcf7-form-control.wpcf7-submit {
-        margin-top: 2em;
-    }
-    input.wpcf7-form-control.wpcf7-text {
-        width: 100%;
-    }
 }
 
 .woocommerce-message {
@@ -186,23 +150,5 @@ input.clear:hover {
     }
     .one-column-product a {
         width: 100%;
-    }
-    select#stil,
-    select#color,
-    select#size {
-        width: 33%;
-        display: flex;
-    }
-    form#filterproducts {
-        flex-direction: column;
-        align-items: unset;
-    }
-    .filter-buttons__container {
-        flex-direction: column;
-        margin-left: unset;
-    }
-    input.filter {
-        width: 100%;
-        margin-top: 2em;
     }
 }
