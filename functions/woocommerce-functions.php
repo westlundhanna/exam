@@ -156,13 +156,16 @@ function woo_custom_order_form() {
      global $post;
      $terms = get_the_terms( $post->ID, 'product_cat' );
 
-     foreach($terms as $term) {
-          $term_id = $term->term_id;
-          $taxonomy = $term->taxonomy;
+     if($terms) {
+          foreach($terms as $term) {
+               $term_id = $term->term_id;
+               $taxonomy = $term->taxonomy;
+          }
      }
+          
      $checked_form = get_field('orderform', $taxonomy . '_' . $term_id);
 
-     if($checked_form) {
+     if(is_product() && $checked_form) {
           // Adds nav button that opens form
           add_action('woocommerce_single_product_summary','add_nav_to_single_product_form', 20);
           // Adds form on single product page
