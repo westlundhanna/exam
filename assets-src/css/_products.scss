@@ -55,23 +55,23 @@ button.menu-toggle:hover,
     color: unset;
 }
 
-.canvas-products {
+.one-column-products {
     display: flex;
     flex-direction: column;
 }
 
-.canvas-product {
+.one-column-product {
     display: flex;
     margin-bottom: 3em;
     padding-bottom: 3em;
     border-bottom: solid 1px $color-main-teal;
 }
 
-.canvas-product a {
+.one-column-product a {
     width: 50%;
 }
 
-.product-canvas__description {
+.one-column-product__description {
     width: 50%;
 }
 
@@ -178,13 +178,13 @@ input.clear:hover {
 }
 
 @media (max-width: 720px) {
-    .canvas-product {
+    .one-column-product {
         flex-direction: column;
     }
-    .product-canvas__description {
+    .one-column-product__description {
         width: 100%;
     }
-    .canvas-product a {
+    .one-column-product a {
         width: 100%;
     }
     select#stil,

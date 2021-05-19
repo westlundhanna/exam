@@ -23,8 +23,13 @@ h6 {
 h1,
 h2,
 input,
-select {
+select,
+.woocommerce-breadcrumb {
   font-family: "Montserrat";
+}
+
+.woocommerce-breadcrumb a:first-of-type:before {
+  display: none;
 }
 
 p,
@@ -178,23 +183,23 @@ button.menu-toggle:hover,
   color: unset;
 }
 
-.canvas-products {
+.one-column-products {
   display: flex;
   flex-direction: column;
 }
 
-.canvas-product {
+.one-column-product {
   display: flex;
   margin-bottom: 3em;
   padding-bottom: 3em;
   border-bottom: solid 1px #6FA9B6;
 }
 
-.canvas-product a {
+.one-column-product a {
   width: 50%;
 }
 
-.product-canvas__description {
+.one-column-product__description {
   width: 50%;
 }
 
@@ -301,15 +306,15 @@ input.clear:hover {
 }
 
 @media (max-width: 720px) {
-  .canvas-product {
+  .one-column-product {
     flex-direction: column;
   }
 
-  .product-canvas__description {
+  .one-column-product__description {
     width: 100%;
   }
 
-  .canvas-product a {
+  .one-column-product a {
     width: 100%;
   }
 
@@ -484,7 +489,7 @@ section.hero__wrapper {
 .banner {
   display: flex;
   justify-content: center;
-  background: #e8e0d7;
+  background: #c2b0a6;
   padding: 20px;
   color: #fff;
   margin-top: -2px;
