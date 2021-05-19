@@ -24,7 +24,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div class="canvas-product">
+<div class="one-column-product">
 	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.
@@ -55,7 +55,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_price - 10
 	 */
 	?>
-		<div class="product-canvas__description">
+		<div class="one-column-product__description">
 	<?php
 	do_action( 'woocommerce_after_shop_loop_item_title' );
 

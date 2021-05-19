@@ -26,7 +26,7 @@ $term_id = $queried_object->term_id;
 $checked = get_field('sidmall', $taxonomy . '_' . $term_id);
 
 if(is_product_category() && $checked == true) {
-	wc_get_template( 'archive-product-canvas.php' );
+	wc_get_template( 'archive-product-one-column.php' );
 }else{
 	wc_get_template( 'archive-product.php' );
 }

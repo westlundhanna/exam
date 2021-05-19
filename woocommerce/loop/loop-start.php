@@ -25,7 +25,7 @@ $term_id = $queried_object->term_id;
 $checked = get_field('sidmall', $taxonomy . '_' . $term_id);
 
 if(is_product_category() && $checked == true) { ?>
-    <div class="canvas-products">
+    <div class="one-column-products">
 <?php
 } else {
 
