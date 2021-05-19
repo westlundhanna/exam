@@ -18,16 +18,6 @@ function woo_add_short_description() {
 }
 
 /**
- * Adds acf value Konstnär to products
- */ 
-function woo_add_artist_acf_to_products() {
-     if(get_field('konstnar')) { ?>
-          <p class="artist-name"><?php the_field('konstnar'); ?></p>
-     <?php
-     }
-}
-
-/**
  * Adds menu to single product
  */ 
 function add_nav_to_single_product_form() {
@@ -136,3 +126,51 @@ function woo_short_description_filter( $post_post_excerpt ) {
           return $post_post_excerpt; 
      }    
 }
+
+/**
+* Function to use custom template for product categories archives and which hooks that should run 
+* when ACF checkbox value is true 
+*/
+function woo_custom_template() {
+     $queried_object = get_queried_object(); 
+     $taxonomy = $queried_object->taxonomy;
+     $term_id = $queried_object->term_id;  
+
+     $checked = get_field('sidmall', $taxonomy . '_' . $term_id);
+
+     if(is_product_category() && $checked) {
+          remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+          remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 ); 
+          remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+          add_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 1);
+          add_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_product_title', 5);
+          add_action( 'woocommerce_after_shop_loop_item_title', 'woo_add_read_more' );
+     }
+}
+
+/**
+* Function to display custom order form on single product page and which hooks that should run, when 
+* ACF checkbox value for the product category is true 
+*/
+function woo_custom_order_form() {
+     global $post;
+     $terms = get_the_terms( $post->ID, 'product_cat' );
+
+     foreach($terms as $term) {
+          $term_id = $term->term_id;
+          $taxonomy = $term->taxonomy;
+     }
+     $checked_form = get_field('orderform', $taxonomy . '_' . $term_id);
+
+     if($checked_form) {
+          // Adds nav button that opens form
+          add_action('woocommerce_single_product_summary','add_nav_to_single_product_form', 20);
+          // Adds form on single product page
+          add_action('woocommerce_single_product_summary', 'add_form_to_single_product', 10);
+          // Filter hook for cf7 form on single product page
+          add_filter('wpcf7_form_tag', 'add_variations_to_order_form', 10, 2);
+          remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+     }
+}
+
+
