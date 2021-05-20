@@ -9,6 +9,7 @@ require_once __DIR__ . '/enqueues.php';
 require_once __DIR__ . '/form-functions.php';
 require_once __DIR__ . '/filter-functions.php';
 require_once __DIR__ . '/storefront-hooks.php';
+require_once __DIR__ . '/footer-functions.php';
 
 // Function to register Wordpress menus
 function wp_register_menus() {
