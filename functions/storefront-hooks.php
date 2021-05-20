@@ -9,6 +9,7 @@ add_filter( 'storefront_menu_toggle_text', 'remove_default_text_toggle_menu' );
 add_action('storefront_homepage', 'add_gallery_images', 40);
 add_action('storefront_page', 'add_gallery_images', 50);
 add_action('storefront_homepage', 'add_fullwidth_section', 50);
+add_action('storefront_homepage', 'add_products_section', 60);
 
 // add_action('storefront_homepage', 'storefront_homepage_content', 1);
 // add_action('storefront_before_content', 'add_product_categories', 2);

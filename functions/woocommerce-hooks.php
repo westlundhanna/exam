@@ -1,11 +1,7 @@
 <?php
 defined('ABSPATH') or die;
 
-// Title before thumbnail
-// remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
-// add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
-
-add_filter( 'wp_nav_menu_main-menu_items', 'am_append_cart_icon', 5, 2 );
+add_filter( 'wp_nav_menu_main-menu_items', 'woo_custom_cart_icon', 5, 2 );
 
 // Adds short description to product archive
 add_action( 'woocommerce_after_shop_loop_item_title', 'woo_add_short_description' );
@@ -32,7 +28,7 @@ add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
 add_filter( 'query_vars', 'product_filterby_query_var' );
 add_action( 'custom_wc_products_sort', 'product_wc_filterby' );
 add_action( 'pre_get_posts', 'product_wc_filterby', 11, 1 );
-add_action('woocommerce_before_shop_loop', 'add_filter_template_part', 50);
+add_action('woocommerce_before_shop_loop', 'add_filter_template_part', 10);
 
 
 // Products belonging to a category that has a true checkbox value will have a custom order form
@@ -40,6 +36,8 @@ add_action( 'wp', 'woo_custom_order_form' );
 
 // Product categories that has a true checkbox value will have a custom template on archive page
 add_action( 'wp', 'woo_custom_template' );  
+
+add_action( 'woocommerce_sale_flash', 'add_discount_to_sale_badge', 25 );
 
 
 

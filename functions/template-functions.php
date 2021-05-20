@@ -25,6 +25,10 @@ function add_fullwidth_section() {
 	endif;  
 }
 
+function add_products_section() {
+	get_template_part('./template-parts/section-products');
+}
+
 function add_product_categories() {
 	get_template_part('./template-parts/section-product-categories');
 }
@@ -66,7 +70,7 @@ function add_banner() {
 
 // Append cart item (and cart count) to end of main menu.
 
-function am_append_cart_icon( $items, $args ) {
+function woo_custom_cart_icon( $items, $args ) {
 	$cart_item_count = WC()->cart->get_cart_contents_count();
 	$cart_count_span = '';
 	if ( $cart_item_count ) {
