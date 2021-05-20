@@ -12,14 +12,14 @@ function add_fullwidth_hero_under_header() {
 }
 
 function add_gallery_images() {
-	get_template_part('./template-parts/gallery');
+	get_template_part('./template-parts/section-gallery');
 }
 
 function add_fullwidth_section() {
 	if( have_rows('fullwidth') ):
 		while ( have_rows('fullwidth') ) : the_row();
 			if( get_row_layout() == 'fullwidth-section' ): 
-				get_template_part('./template-parts/fullwidth-section');
+				get_template_part('./template-parts/section-fullwidth');
 			endif;
 		endwhile;
 	endif;  
@@ -65,7 +65,7 @@ function storefront_actions() {
 
 
 function add_banner() {
-	get_template_part('./template-parts/banner');
+	get_template_part('./template-parts/section-banner');
 }
 
 // Append cart item (and cart count) to end of main menu.

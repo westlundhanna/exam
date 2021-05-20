@@ -13,7 +13,7 @@
             <?php
             endif;
             if($link): ?>
-                <a href="<?php echo $link; ?>"><?php echo $linktext; ?></a>
+                <a href="<?php echo $link; ?>"><button href="<?php echo $link; ?>"><?php echo $linktext; ?></button></a>
             <?php
             endif;
         ?>
