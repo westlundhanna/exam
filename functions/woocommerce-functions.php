@@ -76,20 +76,27 @@ function woo_change_additional_information_header() {
 */
 
 function woo_new_product_tab( $tabs ) {
-	
-	// Adds the new tab
-	
-	$tabs['technical_tab'] = array(
-		'title' 	=> __( 'Teknik', 'woocommerce' ),
-		'priority' 	=> 50,
-		'callback' 	=> 'woo_tech_tab_content'
-    );
+     global $post; 
+     if(have_rows('produkttabbar')): 
+          while(have_rows('produkttabbar')): the_row();
+               if(get_row_layout() == 'tekniktabb'): 
+                    get_sub_field('teknik');
+                    if(!empty(get_sub_field('teknik', $post->ID))) {
+                         $tabs['technical_tab'] = array(
+                              'title' 	=> __( 'Teknik', 'woocommerce' ),
+                              'priority' 	=> 50,
+                              'callback' 	=> 'woo_tech_tab_content'
+                         );
+                    }
+               endif;
+          endwhile;
+     endif;
 
 	return $tabs;
 
 }
 function woo_tech_tab_content() {
-	echo '<h2>Teknik</h2>';	
+     echo '<h2>Teknik</h2>';	
      if(have_rows('produkttabbar')): 
           while(have_rows('produkttabbar')): the_row();
                if(get_row_layout() == 'tekniktabb'): 
@@ -105,7 +112,7 @@ function woo_add_read_more() {
          $url = esc_url( $product->get_permalink() );
          echo '<a rel="nofollow" href="' . $url . '" class="read-more"><button class="read-more__button">Läs mer</button></a>';
      }
- }
+}
 
  /**
   * Removes sorting div after shop loop
@@ -177,21 +184,24 @@ function woo_custom_order_form() {
 }
  
 function add_discount_to_sale_badge() {
-   global $product;
-   if ( ! $product->is_on_sale() ) return;
-   if ( $product->is_type( 'simple' ) ) {
-      $max_percentage = ( ( $product->get_regular_price() - $product->get_sale_price() ) / $product->get_regular_price() ) * 100;
-   } elseif ( $product->is_type( 'variable' ) ) {
-      $max_percentage = 0;
-      foreach ( $product->get_children() as $child_id ) {
-         $variation = wc_get_product( $child_id );
-         $price = $variation->get_regular_price();
-         $sale = $variation->get_sale_price();
-         if ( $price != 0 && ! empty( $sale ) ) $percentage = ( $price - $sale ) / $price * 100;
-         if ( $percentage > $max_percentage ) {
-            $max_percentage = $percentage;
-         }
-      }
-   }
-   if ( $max_percentage > 0 ) echo "<span class='onsale'>-" . round($max_percentage) . "%</span>"; // If you would like to show -40% off then add text after % sign
+     global $product;
+     if ( ! $product->is_on_sale() ) 
+          return;
+     if ( $product->is_type( 'simple' ) ) {
+          $max_percentage = ( ( $product->get_regular_price() - $product->get_sale_price() ) / $product->get_regular_price() ) * 100;
+     } 
+     elseif ( $product->is_type( 'variable' ) ) {
+          $max_percentage = 0;
+          foreach ( $product->get_children() as $child_id ) {
+               $variation = wc_get_product( $child_id );
+               $price = $variation->get_regular_price();
+               $sale = $variation->get_sale_price();
+               if ( $price != 0 && ! empty( $sale ) ) 
+                    $percentage = ( $price - $sale ) / $price * 100;
+               if ( $percentage > $max_percentage ) {
+                    $max_percentage = $percentage;
+               }
+          }
+     }
+     if ( $max_percentage > 0 ) echo "<span class='onsale'>-" . round($max_percentage) . "%</span>";
 }
