@@ -17,7 +17,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat-bold";
+  font-family: "Montserrat";
 }
 
 h1,
@@ -25,6 +25,7 @@ h2,
 input,
 select,
 label,
+div,
 .woocommerce-breadcrumb {
   font-family: "Montserrat";
 }
@@ -57,6 +58,11 @@ button,
 .single-product__order-button {
   background: #6FA9B6;
   color: #fff;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+  font-family: "Montserrat";
 }
 button a,
 .button a,
@@ -76,7 +82,6 @@ button:hover {
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 36px;
-  background-color: #6fa9b666;
 }
 
 h2.has-text-align-center::before,
@@ -188,8 +193,6 @@ section.product-categories {
 
 .grow:hover {
   transform: scale(1.1);
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
 }
 
 ul#menu-product-order-button {
@@ -300,6 +303,21 @@ p.woocommerce-result-count {
 
 .woocommerce-message {
   background-color: #6FA9B6;
+}
+
+span.onsale {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #c2b0a6;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.woocommerce-Price-amount {
+  font-family: "Montserrat";
 }
 
 @media (max-width: 720px) {
@@ -442,11 +460,6 @@ section.hero__wrapper {
 .gallery-content {
   text-align: center;
 }
-.gallery-content button {
-  text-transform: uppercase;
-  font-family: "Montserrat";
-  font-weight: normal;
-}
 
 .banner {
   display: flex;
@@ -466,10 +479,60 @@ section.hero__wrapper {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   margin-top: 10em;
+  margin-bottom: 10em;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.fullwidth-section a {
+  background: #6FA9B6;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+  font-family: "Montserrat";
+}
+
+.products-section {
+  display: flex;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  flex-direction: column;
+}
+.products-section h2 {
+  text-align: center;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+}
+
+.products-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2em;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  row-gap: 3em;
+  justify-content: center;
+}
+
+.product-container {
+  width: 45%;
+  text-align: center;
+}
+.product-container img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.price-container {
+  flex-direction: column;
+  display: flex;
+}
+.price-container .sale-price,
+.price-container .regular-price {
+  font-weight: bold;
 }
 
 @media (max-width: 1024px) {
@@ -575,6 +638,11 @@ span.close-form {
   margin-top: 2em;
   background: #6FA9B6;
   color: #fff;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+  font-family: "Montserrat";
 }
 .wp-block-contact-form-7-contact-form-selector .wpcf7-form .input-wrapper {
   display: flex;

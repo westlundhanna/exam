@@ -29,8 +29,6 @@ section.product-categories {
 
 .grow:hover {
     transform: scale(1.1);
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
 }
 
 ul#menu-product-order-button {
@@ -139,6 +137,21 @@ p.woocommerce-result-count {
 
 .woocommerce-message {
     background-color: $color-main-teal;
+}
+
+span.onsale {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #c2b0a6;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    padding: 0.5rem 1rem;
+}
+
+.woocommerce-Price-amount {
+    @include primary-font;
 }
 
 @media (max-width: 720px) {

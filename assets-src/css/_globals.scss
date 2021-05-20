@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat-bold';
+    font-family: 'Montserrat';
 }
 
 h1,
@@ -12,6 +12,7 @@ h2,
 input,
 select,
 label,
+div,
 .woocommerce-breadcrumb {
     @include primary-font;
 }
@@ -53,7 +54,7 @@ button:hover {
 
 .white {
     @include title-above-images;
-    background-color: #6fa9b666;
+    // background-color: #6fa9b666;
 }
 
 h2.has-text-align-center::before,
