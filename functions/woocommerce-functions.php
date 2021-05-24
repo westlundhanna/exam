@@ -61,7 +61,7 @@ function woo_remove_product_tabs( $tabs ) {
  */
 
 function woo_rename_tabs( $tabs ) {
-    $tabs['additional_information']['title'] = __( 'Egenskaper' );     // Rename the additional information tab
+    $tabs['additional_information']['title'] = __( 'Egenskaper' );
 
     return $tabs;
 }

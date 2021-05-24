@@ -14,10 +14,10 @@ require_once __DIR__ . '/footer-functions.php';
 // Function to register Wordpress menus
 function wp_register_menus() {
     register_nav_menus(
-      array(
+        array(
         'single-product-form' => __( 'Single Product Form' ),
         'product-categories' => __( 'Product Category Menu' ),
-      )
+        )
     );
-  }
+}
 add_action( 'init', 'wp_register_menus' );
