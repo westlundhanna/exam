@@ -15,7 +15,7 @@ function add_variations_to_order_form($scanned_tag, $replace) {
             
         if($product->is_type('variable')){
             foreach($product->get_available_variations() as $variation ){
-                $variation_id = $variation['variation_id'];
+                $variation['variation_id'];
                 $active_price = floatval($variation['display_price']);
                 $attributes = array();
                 foreach( $variation['attributes'] as $key => $value ){
