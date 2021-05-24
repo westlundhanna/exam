@@ -1,16 +1,6 @@
 <?php
 defined('ABSPATH') or die;
 
-function add_fullwidth_hero_under_header() {
-    if( have_rows('hero') ):
-		while ( have_rows('hero') ) : the_row();
-			if( get_row_layout() == 'hero' ): 
-				get_template_part('./template-parts/section-hero');  
-			endif;
-		endwhile;
-	endif;  
-}
-
 function add_gallery_images() {
 	get_template_part('./template-parts/section-gallery');
 }
@@ -27,10 +17,6 @@ function add_fullwidth_section() {
 
 function add_products_section() {
 	get_template_part('./template-parts/section-products');
-}
-
-function add_product_categories() {
-	get_template_part('./template-parts/section-product-categories');
 }
 
 function storefront_remove_sidebar_shop_page() {
