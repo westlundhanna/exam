@@ -107,7 +107,7 @@ span.close-form {
     margin-bottom: 8em;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 767px) {
     form#filterproducts {
         flex-direction: column;
         align-items: unset;
@@ -128,5 +128,8 @@ span.close-form {
         select#size {
             width: 100%;
         }
+    }
+    .wp-block-contact-form-7-contact-form-selector .wpcf7-form .wpcf7-submit {
+        width: 100%;
     }
 }

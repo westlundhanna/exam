@@ -101,10 +101,25 @@
         width: 100%;
         margin-top: 1em;
     }
+    .product-container img {
+        max-height: 300px;
+    }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 767px) {
     .banner {
         text-align: center;
+    }
+    .fullwidth-section__title {
+        text-align: center;
+    }
+    .white {
+        word-break: break-word;
+    }
+    .gallery-image {
+        min-height: 400px;
+    }
+    .product-container {
+        width: unset;
     }
 }

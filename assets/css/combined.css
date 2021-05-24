@@ -320,16 +320,41 @@ span.onsale {
   font-family: "Montserrat";
 }
 
-@media (max-width: 720px) {
+.single-product div.product p.price {
+  color: #6FA9B6;
+  font-weight: bold;
+}
+
+.price {
+  color: #6FA9B6;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+ul.products li.product .woocommerce-loop-product__title {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
   .one-column-product {
     flex-direction: column;
   }
 
   .one-column-product__description {
     width: 100%;
+    margin-top: 2em;
   }
 
   .one-column-product a {
+    width: 100%;
+  }
+
+  .storefront-sorting {
+    margin-bottom: 3em !important;
+    margin-top: 6em;
+  }
+
+  .one-column-product img {
     width: 100%;
   }
 }
@@ -402,7 +427,13 @@ section.hero__wrapper {
   font-weight: 600;
 }
 
-@media (max-width: 720px) {
+button.menu-toggle span:before,
+button.menu-toggle:after,
+button.menu-toggle:before {
+  background-color: #ffffff;
+}
+
+@media (max-width: 767px) {
   .primary-navigation {
     display: block;
   }
@@ -431,6 +462,11 @@ section.hero__wrapper {
 
   button.menu-toggle {
     margin-top: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .site-footer .storefront-handheld-footer-bar a:not(.button):not(.components-button) {
+    color: white;
   }
 }
 .gallery-images {
@@ -540,10 +576,30 @@ section.hero__wrapper {
     width: 100%;
     margin-top: 1em;
   }
+
+  .product-container img {
+    max-height: 300px;
+  }
 }
-@media (max-width: 720px) {
+@media (max-width: 767px) {
   .banner {
     text-align: center;
+  }
+
+  .fullwidth-section__title {
+    text-align: center;
+  }
+
+  .white {
+    word-break: break-word;
+  }
+
+  .gallery-image {
+    min-height: 400px;
+  }
+
+  .product-container {
+    width: unset;
   }
 }
 .filter-select__container {
@@ -659,7 +715,7 @@ span.close-form {
   margin-bottom: 8em;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 767px) {
   form#filterproducts {
     flex-direction: column;
     align-items: unset;
@@ -682,6 +738,10 @@ span.close-form {
   .filter-select__container select#stil,
 .filter-select__container select#color,
 .filter-select__container select#size {
+    width: 100%;
+  }
+
+  .wp-block-contact-form-7-contact-form-selector .wpcf7-form .wpcf7-submit {
     width: 100%;
   }
 }

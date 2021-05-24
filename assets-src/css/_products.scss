@@ -154,14 +154,37 @@ span.onsale {
     @include primary-font;
 }
 
-@media (max-width: 720px) {
+.single-product div.product p.price {
+    color: $color-main-teal;
+    font-weight: bold;
+}
+
+.price {
+    color: $color-main-teal;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+ul.products li.product .woocommerce-loop-product__title {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
     .one-column-product {
         flex-direction: column;
     }
     .one-column-product__description {
         width: 100%;
+        margin-top: 2em;
     }
     .one-column-product a {
+        width: 100%;
+    }
+    .storefront-sorting {
+        margin-bottom: 3em !important;
+        margin-top: 6em;
+    }
+    .one-column-product img {
         width: 100%;
     }
 }

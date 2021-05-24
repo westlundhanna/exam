@@ -68,7 +68,13 @@ section.hero__wrapper {
     }
 }
 
-@media (max-width: 720px) {
+button.menu-toggle span:before,
+button.menu-toggle:after,
+button.menu-toggle:before {
+    background-color: #ffffff;
+}
+
+@media (max-width: 767px) {
     .primary-navigation {
         display: block;
     }
