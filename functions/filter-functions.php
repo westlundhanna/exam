@@ -12,7 +12,9 @@ function product_filterby_query_var( $query_vars ) {
 }
 
 function add_filter_template_part() {
-    get_template_part('/template-parts/custom-product-filter');
+    if(is_shop()) {
+        get_template_part('/template-parts/custom-product-filter');
+    } 
 }
 
 /**
@@ -72,6 +74,9 @@ function product_wc_filterby( WP_Query $query ) {
             }
             $query->set('tax_query', $tax_query );
             
+        }
+        if(isset($_GET['clear'])) {
+            wp_reset_query();
         }
         
     }
