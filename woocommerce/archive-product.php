@@ -43,13 +43,15 @@ do_action( 'woocommerce_before_main_content' );
 	 * @hooked woocommerce_product_archive_description - 10
 	 */
 	do_action( 'woocommerce_archive_description' );
-
-	$term_object = get_queried_object();
+	if(!is_shop()) {
+		$term_object = get_queried_object();
+		?>
+		<div class="woocommerce-category-description">
+			<div class="description"><?php echo $term_object->description; ?></div>
+		</div>
+	<?php
+	}
 	?>
-	<div class="woocommerce-category-description">
-		<div class="description"><?php echo $term_object->description; ?></div>
-	</div>
-	
 </header>
 <?php
 if ( woocommerce_product_loop() ) {
