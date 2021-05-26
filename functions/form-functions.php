@@ -28,6 +28,15 @@ function add_variations_to_order_form($scanned_tag, $replace) {
                     $scanned_tag['labels'][] = $term_name . $active_price;
                 }
             }
+        } else {
+            global $post;
+            $sizes = get_the_terms($post, "pa_storlek");
+
+            foreach($sizes as $size) {
+                $scanned_tag['raw_values'][] = $size->name;
+                $scanned_tag['labels'][] = $size->name;
+            }
+
         }
         $pipes = new WPCF7_Pipes($scanned_tag['raw_values']);
         $scanned_tag['values'] = $pipes->collect_befores();
