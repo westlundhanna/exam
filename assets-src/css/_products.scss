@@ -169,6 +169,11 @@ ul.products li.product .woocommerce-loop-product__title {
     font-size: 1.5rem;
 }
 
+.single-product div.product .product_meta {
+    padding-top: 3em;
+    border-top: none;
+}
+
 @media (max-width: 767px) {
     .one-column-product {
         flex-direction: column;
