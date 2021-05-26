@@ -16,9 +16,6 @@ add_action( 'woocommerce_single_product_summary', 'the_content', 10 );
 // Removes product tabs from single product
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 
-// Removes product meta from single product
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-
 // Product tabs
 add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
 add_filter( 'woocommerce_product_additional_information_heading', 'woo_change_additional_information_header' );
