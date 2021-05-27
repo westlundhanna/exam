@@ -24,8 +24,8 @@ function add_variations_to_order_form($scanned_tag, $replace) {
                     $term_name = get_term_by( 'slug', $value, $taxonomy )->name;
                     $attributes[] = $taxonomy_label.': '.$term_name;
 
-                    $scanned_tag['raw_values'][] = $term_name . $active_price;
-                    $scanned_tag['labels'][] = $term_name . $active_price;
+                    $scanned_tag['raw_values'][] = $term_name;
+                    $scanned_tag['labels'][] = $term_name . ' | ' . $active_price;
                 }
             }
         } else {
